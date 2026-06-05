@@ -137,7 +137,7 @@
         lambda_cpp: lambda_cpp {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LS(LEFT_BRACKET) &kp RIGHT_BRACKET &kp SPACE &kp LPAR &kp RPAR &kp LEFT &kp LEFT>;
+            bindings = <&kp LS(LBRC) &kp RBRC &kp SPACE &kp LPAR &kp RPAR &kp LEFT &kp LEFT>;
             label = "LAMBDA_CPP";
         };
 
@@ -152,14 +152,14 @@
         auto_bracket: auto_bracket {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LEFT_BRACKET &kp RIGHT_BRACKET &kp LEFT>;
+            bindings = <&kp LBRC &kp RBRC &kp LEFT>;
             label = "AUTO_BRACKET";
         };
 
         auto_brace: auto_brace {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LS(LEFT_BRACKET) &kp LS(RIGHT_BRACKET) &kp LEFT>;
+            bindings = <&kp LS(LBRC) &kp LS(RBRC) &kp LEFT>;
             label = "AUTO_BRACE";
         };
 
@@ -323,13 +323,13 @@
             label = "Symbols";
             bindings = <
             // Row 1: Brackets and grouping symbols
-            &kp HASH     &kp DOLLAR   &kp PERCENT  &kp CARET    &kp AMP      &kp ASTERISK                      &kp LPAREN   &kp RPAREN   &kp LS(LEFT_BRACKET) &kp LS(RIGHT_BRACKET) &kp LEFT_BRACKET &kp RIGHT_BRACKET
+            &kp HASH     &kp DOLLAR   &kp PERCENT  &kp CARET    &kp AMP      &kp ASTERISK                      &kp LPAR     &kp RPAR     &kp LS(LBRC) &kp LS(RBRC) &kp LBRC &kp RBRC
             // Row 2: Delimiters, pipes, and assignment operators
             &kp LT       &kp GT       &kp PIPE     &kp BACKSLASH &kp TILDE    &kp LS(MINUS)                    &kp PLUS     &kp MINUS    &kp EQUAL    &kp LS(SEMICOLON)    &kp SEMICOLON &kp SINGLE_QUOTE
             // Row 3: C++ operator macros and common separators
             &eqeq       &noteq      &lshift     &rshift     &scope_op   &arrow_op                        &kp COMMA    &kp PERIOD   &kp SLASH    &kp QUESTION &kp LS(NUMBER_1)     &kp AT
             // Row 4: Alternate home-row symbol access
-            &kp HASH     &kp AT       &kp AMP      &kp ASTERISK &kp LPAREN   &kp RPAREN                        &kp LS(LEFT_BRACKET) &kp LS(RIGHT_BRACKET) &kp LEFT_BRACKET &kp RIGHT_BRACKET &kp PLUS     &kp MINUS
+            &kp HASH     &kp AT       &kp AMP      &kp ASTERISK &kp LPAR     &kp RPAR                        &kp LS(LBRC) &kp LS(RBRC) &kp LBRC &kp RBRC &kp PLUS     &kp MINUS
             // Row 5: Thumb cluster
             &trans       &trans                                                                                          &trans       &trans
             // Row 6: Thumb cluster  
@@ -363,7 +363,7 @@
             // Row 1: Ability hotbar (1-6)
             &kp ESC      &kp N1       &kp N2       &kp N3       &kp N4       &kp N5                          &kp N6       &kp N7       &kp N8       &kp N9       &kp N0       &kp MINUS
             // Row 2: WASD movement
-            &kp TAB      &kp Q        &kp W        &kp E        &kp R        &kp T                           &kp LEFT_BRACKET   &kp RIGHT_BRACKET   &kp LS(LEFT_BRACKET)   &kp LS(RIGHT_BRACKET)   &kp UP       &kp BACKSLASH
+            &kp TAB      &kp Q        &kp W        &kp E        &kp R        &kp T                           &kp LBRC   &kp RBRC   &kp LS(LBRC)   &kp LS(RBRC)   &kp UP       &kp BACKSLASH
             // Row 3: Quick access combat keys
             &kp LCTRL    &kp A        &kp S        &kp D        &kp F        &kp G                           &kp LEFT     &kp DOWN     &kp RIGHT    &kp SEMI     &kp APOS     &kp ENTER
             // Row 4: Extra hotbar + modifier keys
