@@ -302,8 +302,8 @@
         // ========== LAYER 0: BASE QWERTY WITH HOME-ROW MODS ==========
         layer_0 {
             label = "Base";
-            bindings = <
             // Row 1: Numbers + Function Row
+            bindings = <
             &kp ESC      &kp N1       &kp N2       &kp N3       &kp N4       &kp N5                          &kp N6       &kp N7       &kp N8       &kp N9       &kp N0       &kp MINUS
             // Row 2: QWERTY Top
             &kp TAB      &kp Q        &kp W        &kp E        &kp R        &kp T                           &kp Y        &kp U        &kp I        &kp O        &kp P        &kp EQUAL
@@ -321,8 +321,8 @@
         // ========== LAYER 1: SYMBOLS FOR C++ ==========
         layer_1 {
             label = "Symbols";
-            bindings = <
             // Row 1: Brackets and grouping symbols
+            bindings = <
             &kp HASH     &kp DLLR     &kp PRCNT    &kp CARET    &kp AMPS     &kp ASTRK                         &kp LPAR     &kp RPAR     &kp LBKT &kp RBKT &kp LBRC &kp RBRC
             // Row 2: Delimiters, pipes, and assignment operators
             &kp LT       &kp GT       &kp PIPE     &kp BSLH      &kp TILDE    &kp LS(MINUS)                    &kp PLUS     &kp MINUS    &kp EQUAL    &kp COLON           &kp SEMI      &kp SQT
@@ -340,8 +340,8 @@
         // ========== LAYER 2: NAVIGATION & IDE SHORTCUTS ==========
         layer_2 {
             label = "Nav";
-            bindings = <
             // Row 1: IDE shortcuts
+            bindings = <
             &open_file   &kp F1       &kp F2       &kp F3       &kp F4       &kp F5                          &save_file   &kp F7       &kp F8       &kp F9       &kp F10      &kp F12
             // Row 2: Quick navigation
             &find_in_files &kp LC(H)  &kp PAGE_UP  &kp UP       &kp PAGE_DOWN &go_to_definition              &kp HOME     &kp UP       &kp END      &kp C_VOL_UP &kp C_VOL_DN &kp C_MUTE
@@ -359,8 +359,8 @@
         // ========== LAYER 3: GAMING ==========
         layer_3 {
             label = "Gaming";
-            bindings = <
             // Row 1: Ability hotbar (1-6)
+            bindings = <
             &kp ESC      &kp N1       &kp N2       &kp N3       &kp N4       &kp N5                          &kp N6       &kp N7       &kp N8       &kp N9       &kp N0       &kp MINUS
             // Row 2: WASD movement
             &kp TAB      &kp Q        &kp W        &kp E        &kp R        &kp T                           &kp LBRC   &kp RBRC   &kp LBKT   &kp RBKT   &kp UP       &kp BSLH
@@ -380,8 +380,8 @@
         // Maps: A→Å, E→Æ, O→Ø
         layer_4 {
             label = "Norwegian (momentary)";
-            bindings = <
             // Row 1: All transparent
+            bindings = <
             &trans       &trans       &trans       &trans       &trans       &trans                          &trans       &trans       &trans       &trans       &trans       &trans
             // Row 2: All transparent
             &trans       &trans       &trans       &trans       &trans       &trans                          &trans       &trans       &trans       &trans       &trans       &trans
@@ -404,8 +404,8 @@
         // ========== LAYER 5: ADJUST/RGB/BT ==========
         layer_5 {
             label = "Adjust";
-            bindings = <
             // Row 1: Bluetooth profiles
+            bindings = <
             &bt BT_CLR   &bt BT_SEL 0  &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4                  &trans       &trans       &trans       &trans       &trans       &trans
             // Row 2: RGB underglow
             &rgb_ug RGB_ON &rgb_ug RGB_OFF &rgb_ug RGB_TOG &rgb_ug RGB_EFF_NEXT &rgb_ug RGB_EFF_PREV &trans                  &rgb_ug RGB_BRI &rgb_ug RGB_BRD &rgb_ug RGB_SAI &rgb_ug RGB_SAD &rgb_ug RGB_HUI &rgb_ug RGB_HUD
