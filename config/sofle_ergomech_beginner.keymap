@@ -1,0 +1,324 @@
+// Sofle Ergomech - Beginner-Friendly & Programmer-Optimized Keymap
+// Layers: Base QWERTY + Home-row Mods | Symbols/Numbers | Navigation/IDE | Gaming | Norwegian | Adjust
+// Target: Coding (C/C++, Python, Rust) + Gaming (GuildWars2) + English/Norwegian typing
+
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/ext_power.h>
+#include <dt-bindings/zmk/rgb.h>
+
+// ==================== LAYER DEFINITIONS ====================
+#define BASE 0
+#define SYMBOLS 1
+#define NAV 2
+#define GAMING 3
+#define NORWEGIAN 4
+#define ADJUST 5
+
+// ==================== BEHAVIOR DEFINITIONS ====================
+/ {
+    behaviors {
+        // Home-row mods with quick-tap-ms for reliability
+        hm_l: homerow_mods_left {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <135>;
+            flavor = "balanced";
+            bindings = <&kp>, <&kp>;
+            hold-trigger-key-positions = <6 7 8 9 10 11 18 19 20 21 22 23 30 31 32 33 34 35 42 43 44 45 46 47>;
+        };
+
+        hm_r: homerow_mods_right {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <135>;
+            flavor = "balanced";
+            bindings = <&kp>, <&kp>;
+            hold-trigger-key-positions = <0 1 2 3 4 5 12 13 14 15 16 17 24 25 26 27 28 29 36 37 38 39 40 41>;
+        };
+
+        // Tap-hold for Norwegian characters on Layer 1
+        // Tap = normal char, Hold = Norwegian char
+        th_nordic: tap_hold_nordic {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <150>;
+            quick-tap-ms = <100>;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&kp>;
+        };
+
+        // Mod-tap for common programming patterns
+        mt_prog: mod_tap_programming {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <220>;
+            quick-tap-ms = <100>;
+            flavor = "balanced";
+            bindings = <&kp>, <&kp>;
+        };
+
+        // Layer-tap for better thumb access
+        lt_layer: layer_tap {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <125>;
+            flavor = "balanced";
+            bindings = <&mo>, <&kp>;
+        };
+    };
+
+    // ==================== MACROS ====================
+    macros {
+        // IDE/Editor shortcuts
+        save_file: save_file {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(S)>;
+            label = "SAVE_FILE";
+        };
+
+        open_file: open_file {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(K) &kp LC(O)>;
+            label = "OPEN_FILE";
+        };
+
+        find_in_files: find_in_files {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(LS(F))>;
+            label = "FIND_IN_FILES";
+        };
+
+        go_to_definition: go_to_definition {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(LS(I))>;
+            label = "GOTO_DEFINITION";
+        };
+
+        quick_format: quick_format {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(LA(F))>;
+            label = "FORMAT_DOC";
+        };
+
+        // Programming helpers
+        include_guard: include_guard {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp HASH &kp I &kp F &kp D &kp E &kp F &kp SPACE>;
+            label = "IFNDEF";
+        };
+
+        lambda_cpp: lambda_cpp {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LS(LBKT) &kp RBKT &kp SPACE &kp LPAR &kp RPAR &kp LEFT &kp LEFT>;
+            label = "LAMBDA_CPP";
+        };
+
+        // Brackets with auto-close
+        auto_paren: auto_paren {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LPAR &kp RPAR &kp LEFT>;
+            label = "AUTO_PAREN";
+        };
+
+        auto_bracket: auto_bracket {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LBKT &kp RBKT &kp LEFT>;
+            label = "AUTO_BRACKET";
+        };
+
+        auto_brace: auto_brace {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LBRC &kp RBRC &kp LEFT>;
+            label = "AUTO_BRACE";
+        };
+
+        // Gaming macros
+        toggle_weapon: toggle_weapon {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp TAB>;
+            label = "TOGGLE_WEAPON";
+        };
+
+        push_to_talk: push_to_talk {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp V>;
+            label = "PUSH_TO_TALK";
+        };
+    };
+
+    // ==================== COMBOS ====================
+    combos {
+        compatible = "zmk,combos";
+
+        // Quick access to common symbols
+        combo_tilde {
+            timeout-ms = <50>;
+            key-positions = <1 2>;
+            bindings = <&kp TILDE>;
+        };
+
+        combo_at {
+            timeout-ms = <50>;
+            key-positions = <2 3>;
+            bindings = <&kp AT>;
+        };
+
+        combo_hash {
+            timeout-ms = <50>;
+            key-positions = <3 4>;
+            bindings = <&kp HASH>;
+        };
+
+        combo_dollar {
+            timeout-ms = <50>;
+            key-positions = <4 5>;
+            bindings = <&kp DOLLAR>;
+        };
+
+        combo_caps {
+            timeout-ms = <50>;
+            key-positions = <20 21>;
+            bindings = <&kp CAPS>;
+        };
+    };
+
+    // ==================== KEYMAP ====================
+    keymap {
+        compatible = "zmk,keymap";
+
+        // ========== LAYER 0: BASE QWERTY WITH HOME-ROW MODS ==========
+        layer_0 {
+            label = "Base";
+            bindings = <
+            // Row 1: Numbers + Function Row
+            &kp ESC      &kp N1       &kp N2       &kp N3       &kp N4       &kp N5                          &kp N6       &kp N7       &kp N8       &kp N9       &kp N0       &kp MINUS
+            // Row 2: QWERTY Top
+            &kp TAB      &kp Q        &kp W        &kp E        &kp R        &kp T                           &kp Y        &kp U        &kp I        &kp O        &kp P        &kp EQUAL
+            // Row 3: QWERTY Home Row + Home-Row Mods (A=Shift, S=Ctrl, D=Alt, F=GUI)
+            &kp LCTRL    &hm_l LSHFT A &hm_l LCTRL S &hm_l LALT D &hm_l LGUI F &kp G                           &kp H        &hm_r RGUI J &hm_r RALT K &hm_r RCTRL L &hm_r RSHFT SEMI &kp APOS
+            // Row 4: QWERTY Bottom
+            &kp LSHFT    &kp Z        &kp X        &kp C        &kp V        &kp B                           &kp N        &kp M        &kp COMMA    &kp PERIOD   &kp SLASH    &kp RSHFT
+            // Row 5: Thumb Cluster (left side)
+            &kp LALT     &mo ADJUST                                                                                       &lt_layer SYMBOLS SPACE  &lt_layer NAV BSPC
+            // Row 6: Thumb Cluster (right side)
+                                                &lt_layer SYMBOLS SPACE  &lt_layer SYMBOLS BSPC          &kp ENTER    &lt_layer GAMING TAB   &kp RCTRL    &kp RALT
+            >;
+        };
+
+        // ========== LAYER 1: SYMBOLS & NUMBERS ==========
+        layer_1 {
+            label = "Symbols";
+            bindings = <
+            // Row 1: Function keys
+            &trans       &kp F1       &kp F2       &kp F3       &kp F4       &kp F5                          &kp F6       &kp F7       &kp F8       &kp F9       &kp F10      &kp F11
+            // Row 2: Numpad layout + brackets
+            &trans       &kp N7       &kp N8       &kp N9       &kp SLASH    &kp ASTRK                       &kp LBKT     &kp RBKT     &kp LBRC     &kp RBRC     &kp BSLH     &kp PIPE
+            // Row 3: More numbers + operators
+            &trans       &kp N4       &kp N5       &kp N6       &kp MINUS    &kp PLUS                        &kp LT       &kp GT       &kp EQUAL    &kp GRAVE    &kp CARET    &kp AMPS
+            // Row 4: Number row bottom + symbols
+            &trans       &kp N1       &kp N2       &kp N3       &kp DOT      &kp COMMA                       &kp UNDER    &kp PERCENT  &kp EXCL     &kp QUESTION &kp TILDE    &kp DOLLAR
+            // Row 5: Thumb cluster
+            &trans       &trans                                                                                          &trans       &trans
+            // Row 6: Thumb cluster  
+                                                &trans       &trans                        &auto_paren  &auto_bracket  &auto_brace  &trans
+            >;
+        };
+
+        // ========== LAYER 2: NAVIGATION & IDE SHORTCUTS ==========
+        layer_2 {
+            label = "Nav";
+            bindings = <
+            // Row 1: IDE shortcuts
+            &open_file   &kp F1       &kp F2       &kp F3       &kp F4       &kp F5                          &save_file   &kp F7       &kp F8       &kp F9       &kp F10      &kp F12
+            // Row 2: Quick navigation
+            &find_in_files &kp LC(H)  &kp PAGE_UP  &kp UP       &kp PAGE_DOWN &go_to_definition              &kp HOME     &kp UP       &kp END      &kp C_VOL_UP &kp C_VOL_DN &kp C_MUTE
+            // Row 3: Vim-inspired + Tab navigation  
+            &trans       &kp LEFT     &kp DOWN     &kp RIGHT    &kp LC(TAB)  &kp LC(LS(TAB))                &kp HOME     &kp DOWN     &kp END      &kp LPAR     &kp RPAR     &kp PIPE
+            // Row 4: Search + Replace + Formatting
+            &kp LC(F)    &quick_format &kp LC(LS(X)) &trans      &trans       &trans                          &kp C_PLAY   &kp C_PREV   &kp C_NEXT   &trans       &trans       &trans
+            // Row 5: Thumb cluster
+            &trans       &trans                                                                                          &trans       &trans
+            // Row 6: Thumb cluster
+                                                &trans       &trans                        &trans       &trans         &trans       &trans
+            >;
+        };
+
+        // ========== LAYER 3: GAMING ==========
+        layer_3 {
+            label = "Gaming";
+            bindings = <
+            // Row 1: Ability hotbar (1-6)
+            &kp ESC      &kp N1       &kp N2       &kp N3       &kp N4       &kp N5                          &kp N6       &kp N7       &kp N8       &kp N9       &kp N0       &kp MINUS
+            // Row 2: WASD movement
+            &kp TAB      &kp Q        &kp W        &kp E        &kp R        &kp T                           &kp LBKT     &kp RBKT     &kp LBRC     &kp RBRC     &kp UP       &kp BSLH
+            // Row 3: Quick access combat keys
+            &kp LCTRL    &kp A        &kp S        &kp D        &kp F        &kp G                           &kp LEFT     &kp DOWN     &kp RIGHT    &kp SEMI     &kp APOS     &kp ENTER
+            // Row 4: Extra hotbar + modifier keys
+            &kp LSHFT    &kp Z        &kp X        &kp C        &kp V        &kp B                           &kp M        &kp COMMA    &kp PERIOD   &kp SLASH    &kp SPACE    &kp RSHFT
+            // Row 5: Thumb cluster - push to talk
+            &kp LALT     &trans                                                                                          &kp SPACE    &push_to_talk
+            // Row 6: Thumb cluster
+                                                &kp SPACE    &kp BSPC                      &kp ENTER    &trans         &kp RCTRL    &kp RALT
+            >;
+        };
+
+        // ========== LAYER 4: NORWEGIAN CHARACTERS ==========
+        layer_4 {
+            label = "Norwegian";
+            bindings = <
+            // Row 1: Unchanged
+            &trans       &trans       &trans       &trans       &trans       &trans                          &trans       &trans       &trans       &trans       &trans       &trans
+            // Row 2: Norwegian vowels at standard positions
+            &trans       &trans       &trans       &trans       &trans       &trans                          &trans       &trans       &trans       &trans       &kp P        &trans
+            // Row 3: Add Norwegian accented chars as hold options
+            &trans       &trans       &trans       &trans       &trans       &trans                          &trans       &trans       &trans       &trans       &trans       &trans
+            // Row 4: Bottom row
+            &trans       &trans       &trans       &trans       &trans       &trans                          &trans       &trans       &trans       &trans       &trans       &trans
+            // Row 5: Thumb cluster - IMPORTANT: Direct Norwegian chars on this layer
+            &trans       &trans                                                                                          &kp RA(N0)   &kp RA(N7)
+            // Row 6: Thumb cluster - Ø, Æ, Å access
+                                                &kp RA(N0)   &kp RA(N7)                      &kp RA(N8)   &trans         &trans       &trans
+            >;
+            // NOTE: For true Norwegian support, use Alt-Codes or configure at OS level:
+            // Ø = Alt+0216 / ø = Alt+0248
+            // Æ = Alt+0198 / æ = Alt+0230
+            // Å = Alt+0197 / å = Alt+0229
+        };
+
+        // ========== LAYER 5: ADJUST/RGB/BT ==========
+        layer_5 {
+            label = "Adjust";
+            bindings = <
+            // Row 1: Bluetooth profiles
+            &bt BT_CLR   &bt BT_SEL 0  &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4                  &trans       &trans       &trans       &trans       &trans       &trans
+            // Row 2: RGB underglow
+            &rgb_ug RGB_ON &rgb_ug RGB_OFF &rgb_ug RGB_TOG &rgb_ug RGB_EFF_NEXT &rgb_ug RGB_EFF_PREV &trans                  &rgb_ug RGB_BRI &rgb_ug RGB_BRD &rgb_ug RGB_SAI &rgb_ug RGB_SAD &rgb_ug RGB_HUI &rgb_ug RGB_HUD
+            // Row 3: Power settings
+            &ext_power EXT_POWER_ON &ext_power EXT_POWER_OFF &ext_power EXT_POWER_TOG &trans &trans &trans  &trans       &trans       &trans       &trans       &trans       &trans
+            // Row 4: Reset/Bootloader
+            &sys_reset   &bootloader  &trans       &trans       &trans       &trans                          &trans       &trans       &trans       &trans       &trans       &trans
+            // Row 5: Thumb cluster
+            &trans       &trans                                                                                          &trans       &trans
+            // Row 6: Thumb cluster
+                                                &trans       &trans                        &trans       &trans         &trans       &trans
+            >;
+        };
+    };
+};
