@@ -1,0 +1,262 @@
+layout: {zmk_keyboard: Ergomech Sofle_modded}
+layers:
+  default:
+  - ESCAPE
+  - '1'
+  - '2'
+  - '3'
+  - '4'
+  - '5'
+  - '6'
+  - '7'
+  - '8'
+  - '9'
+  - '0'
+  - '-'
+  - TAB
+  - Q
+  - W
+  - E
+  - R
+  - T
+  - Y
+  - U
+  - I
+  - O
+  - {t: P, h: '['}
+  - BACKSPACE
+  - LSHFT
+  - A
+  - S
+  - D
+  - F
+  - G
+  - H
+  - J
+  - K
+  - L
+  - ;
+  - ''''
+  - LCTRL
+  - Z
+  - X
+  - {t: C, h: Ctl+C}
+  - {t: V, h: Ctl+V}
+  - B
+  - N
+  - M
+  - ','
+  - .
+  - /
+  - RSHFT
+  - UNKNOWN c00e2
+  - LGUI
+  - LALT
+  - RETURN
+  - SPACE
+  - lower
+  - raise
+  - SPACE
+  - RCTRL
+  - RALT
+  - RETURN
+  - PLAY PAUSE
+  - RIGHT ARROW
+  - UP ARROW
+  - LEFT ARROW
+  - DOWN ARROW
+  lower:
+  - '&studio_unlock'
+  - F1
+  - F2
+  - F3
+  - F4
+  - F5
+  - F6
+  - F7
+  - F8
+  - F9
+  - F10
+  - F11
+  - '`'
+  - '1'
+  - UP ARROW
+  - '3'
+  - '4'
+  - '5'
+  - '6'
+  - '7'
+  - '8'
+  - '9'
+  - '0'
+  - F12
+  - {t: ▽, type: trans}
+  - LEFT ARROW
+  - Sft+DOWN ARROW
+  - Sft+RIGHT ARROW
+  - Sft+4
+  - Sft+5
+  - Sft+6
+  - KP 4
+  - KP 5
+  - KP 6
+  - Sft+0
+  - Sft+\
+  - {t: ▽, type: trans}
+  - '='
+  - {t: K, h: KP MULTIPLY}
+  - Sft+=
+  - Sft+[
+  - Sft+]
+  - '['
+  - KP 1
+  - KP 2
+  - KP 3
+  - \
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {type: held}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - A
+  - B
+  - C
+  - D
+  - E
+  raise:
+  - {t: Clear, h: Selected}
+  - '3'
+  - '3'
+  - '3'
+  - '3'
+  - '3'
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - '='
+  - {t: ▽, type: trans}
+  - Sft+=
+  - \
+  - Sft+\
+  - KP MINUS
+  - '`'
+  - Sft+]
+  - AltGr+7
+  - AltGr+0
+  - AltGr+4
+  - '0'
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - UNKNOWN 700cf
+  - KP MULTIPLY
+  - KP DIVIDE
+  - Sft+0
+  - Sft+6
+  - Sft+3
+  - Sft+8
+  - Sft+9
+  - Sft+,
+  - Sft+2
+  - BACKSPACE
+  - {t: ▽, type: trans}
+  - AltGr+]
+  - KP PLUS
+  - AltGr+8
+  - AltGr+9
+  - Sft+5
+  - AltGr+2
+  - Sft+.
+  - ','
+  - .
+  - \
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {type: held}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - A
+  - B
+  - C
+  - D
+  - E
+  adjust:
+  - {t: Clear, h: Selected}
+  - '3'
+  - '3'
+  - '3'
+  - '3'
+  - '3'
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - Hue Down
+  - Hue Up
+  - Saturation Down
+  - Saturation Up
+  - Next Effect
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - '['
+  - Brightness Up
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - Toggle On/Off
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - A
+  - B
+  - C
+  - D
+  - E
