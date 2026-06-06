@@ -98,6 +98,7 @@
             tapping-term-ms = <200>;
             quick-tap-ms = <125>;
             flavor = "balanced";
+            bindings = <&kp &kp>;
         };
     };
 
