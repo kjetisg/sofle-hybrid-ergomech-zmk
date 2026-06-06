@@ -60,7 +60,6 @@
         my_encoder_layer_cycle: my_encoder_layer_cycle {
             compatible = "zmk,behavior-sensor-rotate";
             #sensor-binding-cells = <0>;
-            display-name = "Encoder Layer Cycle";
             /* sensors.triggers-per-rotation on the board is 20; map positions to layers
              * Each position is a separate trigger binding, following the existing
              * ZMK sensor-bindings style used in the board reference keymap.
@@ -99,7 +98,6 @@
             tapping-term-ms = <200>;
             quick-tap-ms = <125>;
             flavor = "balanced";
-            display-name = "My Layer Tap";
         };
     };
 
