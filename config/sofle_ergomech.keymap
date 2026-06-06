@@ -42,7 +42,7 @@
             tapping-term-ms = <200>;
             quick-tap-ms = <135>;
             flavor = "balanced";
-            bindings = <&kp>, <&kp>;
+            bindings = <&kp &kp>;
             hold-trigger-key-positions = <6 7 8 9 10 11 18 19 20 21 22 23 30 31 32 33 34 35 42 43 44 45 46 47>;
         };
 
@@ -52,8 +52,23 @@
             tapping-term-ms = <200>;
             quick-tap-ms = <135>;
             flavor = "balanced";
-            bindings = <&kp>, <&kp>;
+            bindings = <&kp &kp>;
             hold-trigger-key-positions = <0 1 2 3 4 5 12 13 14 15 16 17 24 25 26 27 28 29 36 37 38 39 40 41>;
+        };
+
+        // Encoder: cycle persistent layers using the roller (positions mapped around wheel)
+        my_encoder_layer_cycle: my_encoder_layer_cycle {
+            compatible = "zmk,behavior-sensor-rotate";
+            #sensor-binding-cells = <0>;
+            display-name = "Encoder Layer Cycle";
+            /* sensors.triggers-per-rotation on the board is 20; map positions to layers
+             * Each position is a separate trigger binding, following the existing
+             * ZMK sensor-bindings style used in the board reference keymap.
+             */
+            bindings = <&to BASE>, <&to SYMBOLS>, <&to NAV>, <&to GAMING>, <&to NORWEGIAN>, <&to ADJUST>,
+                       <&to BASE>, <&to SYMBOLS>, <&to NAV>, <&to GAMING>, <&to NORWEGIAN>, <&to ADJUST>,
+                       <&to BASE>, <&to SYMBOLS>, <&to NAV>, <&to GAMING>, <&to NORWEGIAN>, <&to ADJUST>,
+                       <&to BASE>, <&to SYMBOLS>;
         };
 
         // Tap-hold for Norwegian characters on Layer 1
@@ -64,7 +79,7 @@
             tapping-term-ms = <150>;
             quick-tap-ms = <100>;
             flavor = "tap-preferred";
-            bindings = <&kp>, <&kp>;
+            bindings = <&kp &kp>;
         };
 
         // Mod-tap for common programming patterns
@@ -74,17 +89,17 @@
             tapping-term-ms = <220>;
             quick-tap-ms = <100>;
             flavor = "balanced";
-            bindings = <&kp>, <&kp>;
+            bindings = <&kp &kp>;
         };
 
         // Layer-tap for better thumb access
-        lt_layer: layer_tap {
-            compatible = "zmk,behavior-hold-tap";
+        my_layer_tap: my_layer_tap {
+            compatible = "zmk,behavior-layer-tap";
             #binding-cells = <2>;
             tapping-term-ms = <200>;
             quick-tap-ms = <125>;
             flavor = "balanced";
-            bindings = <&mo>, <&kp>;
+            display-name = "My Layer Tap";
         };
     };
 
@@ -297,7 +312,7 @@
 
     // ==================== KEYMAP ====================
     keymap {
-        compatible = "zmk,keymap";
+    compatible = "zmk,keymap";
 
         // ========== LAYER 0: BASE QWERTY WITH HOME-ROW MODS ==========
         layer_0 {
@@ -312,10 +327,11 @@
             // Row 4: QWERTY Bottom
             &kp LSHFT    &kp Z        &kp X        &kp C        &kp V        &kp B                           &kp N        &kp M        &kp COMMA    &kp PERIOD   &kp SLASH    &kp RSHFT
             // Row 5: Thumb Cluster (left side)
-            &kp LALT     &mo ADJUST                                                                                       &lt_layer SYMBOLS SPACE  &lt_layer NAV BSPC
+            &kp LALT     &mo ADJUST                                                                                       &my_layer_tap SYMBOLS SPACE  &my_layer_tap NAV BSPC
             // Row 6: Thumb Cluster (right side) - Right position is Norwegian momentary layer
-                                                &lt_layer SYMBOLS SPACE  &lt_layer SYMBOLS BSPC          &kp ENTER    &lt_layer GAMING TAB   &kp RCTRL    &mo NORWEGIAN
+                                                &my_layer_tap SYMBOLS SPACE  &my_layer_tap SYMBOLS BSPC          &kp ENTER    &my_layer_tap GAMING TAB   &kp RCTRL    &mo NORWEGIAN
             >;
+            sensor-bindings = <&my_encoder_layer_cycle>;
         };
 
         // ========== LAYER 1: SYMBOLS FOR C++ ==========
@@ -335,6 +351,7 @@
             // Row 6: Thumb cluster  
                                                 &trans       &trans                        &auto_paren  &auto_bracket  &auto_brace  &trans
             >;
+            sensor-bindings = <&my_encoder_layer_cycle>;
         };
 
         // ========== LAYER 2: NAVIGATION & IDE SHORTCUTS ==========
@@ -354,6 +371,7 @@
             // Row 6: Thumb cluster
                                                 &trans       &trans                        &trans       &trans         &trans       &trans
             >;
+            sensor-bindings = <&my_encoder_layer_cycle>;
         };
 
         // ========== LAYER 3: GAMING ==========
@@ -373,6 +391,7 @@
             // Row 6: Thumb cluster
                                                 &kp SPACE    &kp BSPC                      &kp ENTER    &trans         &kp RCTRL    &kp RALT
             >;
+            sensor-bindings = <&my_encoder_layer_cycle>;
         };
 
         // ========== LAYER 4: NORWEGIAN MOMENTARY LAYER ==========
@@ -394,11 +413,8 @@
             // Row 6: All transparent
                                                 &trans       &trans                        &trans       &trans         &trans       &trans
             >;
-            // NOTE: Uses Alt+numeric codes for Norwegian characters:
-            // Å/å: Alt+0197 (Å) / Alt+0229 (å) - mapped to position of A
-            // Ø/ø: Alt+0216 (Ø) / Alt+0248 (ø) - mapped to position of O
-            // Æ/æ: Alt+0198 (Æ) / Alt+0230 (æ) - mapped to position of E
-            // Mac/Linux users: Configure at OS level or use native compose keys
+            sensor-bindings = <&my_encoder_layer_cycle>;
+            // (Norwegian Alt-code notes removed to avoid DT parsing edge-case comments)
         };
 
         // ========== LAYER 5: ADJUST/RGB/BT ==========
@@ -418,6 +434,7 @@
             // Row 6: Thumb cluster
                                                 &trans       &trans                        &trans       &trans         &trans       &trans
             >;
+            sensor-bindings = <&my_encoder_layer_cycle>;
         };
     };
 };
