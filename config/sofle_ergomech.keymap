@@ -56,18 +56,41 @@
             hold-trigger-key-positions = <0 1 2 3 4 5 12 13 14 15 16 17 24 25 26 27 28 29 36 37 38 39 40 41>;
         };
 
-        // Encoder: cycle persistent layers using the roller (positions mapped around wheel)
-        my_encoder_layer_cycle: my_encoder_layer_cycle {
+        // Encoder: rotate through the layer ring using the roller
+        my_encoder_cycle_base: my_encoder_cycle_base {
             compatible = "zmk,behavior-sensor-rotate";
             #sensor-binding-cells = <0>;
-            /* sensors.triggers-per-rotation on the board is 20; map positions to layers
-             * Each position is a separate trigger binding, following the existing
-             * ZMK sensor-bindings style used in the board reference keymap.
-             */
-            bindings = <&to BASE>, <&to SYMBOLS>, <&to NAV>, <&to GAMING>, <&to NORWEGIAN>, <&to ADJUST>,
-                       <&to BASE>, <&to SYMBOLS>, <&to NAV>, <&to GAMING>, <&to NORWEGIAN>, <&to ADJUST>,
-                       <&to BASE>, <&to SYMBOLS>, <&to NAV>, <&to GAMING>, <&to NORWEGIAN>, <&to ADJUST>,
-                       <&to BASE>, <&to SYMBOLS>;
+            bindings = <&to SYMBOLS>, <&to ADJUST>;
+        };
+
+        my_encoder_cycle_symbols: my_encoder_cycle_symbols {
+            compatible = "zmk,behavior-sensor-rotate";
+            #sensor-binding-cells = <0>;
+            bindings = <&to NAV>, <&to BASE>;
+        };
+
+        my_encoder_cycle_nav: my_encoder_cycle_nav {
+            compatible = "zmk,behavior-sensor-rotate";
+            #sensor-binding-cells = <0>;
+            bindings = <&to GAMING>, <&to SYMBOLS>;
+        };
+
+        my_encoder_cycle_gaming: my_encoder_cycle_gaming {
+            compatible = "zmk,behavior-sensor-rotate";
+            #sensor-binding-cells = <0>;
+            bindings = <&to NORWEGIAN>, <&to NAV>;
+        };
+
+        my_encoder_cycle_norwegian: my_encoder_cycle_norwegian {
+            compatible = "zmk,behavior-sensor-rotate";
+            #sensor-binding-cells = <0>;
+            bindings = <&to ADJUST>, <&to GAMING>;
+        };
+
+        my_encoder_cycle_adjust: my_encoder_cycle_adjust {
+            compatible = "zmk,behavior-sensor-rotate";
+            #sensor-binding-cells = <0>;
+            bindings = <&to BASE>, <&to NORWEGIAN>;
         };
 
         // Tap-hold for Norwegian characters on Layer 1
@@ -98,7 +121,7 @@
             tapping-term-ms = <200>;
             quick-tap-ms = <125>;
             flavor = "balanced";
-            bindings = <&kp &kp>;
+            bindings = <&mo>, <&kp>;
         };
     };
 
@@ -330,7 +353,7 @@
             // Row 6: Thumb Cluster (right side) - Right position is Norwegian momentary layer
                                                 &my_layer_tap SYMBOLS SPACE  &my_layer_tap SYMBOLS BSPC          &kp ENTER    &my_layer_tap GAMING TAB   &kp RCTRL    &mo NORWEGIAN
             >;
-            sensor-bindings = <&my_encoder_layer_cycle>;
+            sensor-bindings = <&my_encoder_cycle_base>;
         };
 
         // ========== LAYER 1: SYMBOLS FOR C++ ==========
@@ -350,7 +373,7 @@
             // Row 6: Thumb cluster  
                                                 &trans       &trans                        &auto_paren  &auto_bracket  &auto_brace  &trans
             >;
-            sensor-bindings = <&my_encoder_layer_cycle>;
+            sensor-bindings = <&my_encoder_cycle_symbols>;
         };
 
         // ========== LAYER 2: NAVIGATION & IDE SHORTCUTS ==========
@@ -370,7 +393,7 @@
             // Row 6: Thumb cluster
                                                 &trans       &trans                        &trans       &trans         &trans       &trans
             >;
-            sensor-bindings = <&my_encoder_layer_cycle>;
+            sensor-bindings = <&my_encoder_cycle_nav>;
         };
 
         // ========== LAYER 3: GAMING ==========
@@ -390,7 +413,7 @@
             // Row 6: Thumb cluster
                                                 &kp SPACE    &kp BSPC                      &kp ENTER    &trans         &kp RCTRL    &kp RALT
             >;
-            sensor-bindings = <&my_encoder_layer_cycle>;
+            sensor-bindings = <&my_encoder_cycle_gaming>;
         };
 
         // ========== LAYER 4: NORWEGIAN MOMENTARY LAYER ==========
@@ -412,7 +435,7 @@
             // Row 6: All transparent
                                                 &trans       &trans                        &trans       &trans         &trans       &trans
             >;
-            sensor-bindings = <&my_encoder_layer_cycle>;
+            sensor-bindings = <&my_encoder_cycle_norwegian>;
             // (Norwegian Alt-code notes removed to avoid DT parsing edge-case comments)
         };
 
@@ -433,7 +456,7 @@
             // Row 6: Thumb cluster
                                                 &trans       &trans                        &trans       &trans         &trans       &trans
             >;
-            sensor-bindings = <&my_encoder_layer_cycle>;
+            sensor-bindings = <&my_encoder_cycle_adjust>;
         };
     };
 };
