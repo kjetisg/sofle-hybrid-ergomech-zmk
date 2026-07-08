@@ -1,9 +1,355 @@
 layout: {zmk_keyboard: sofle_ergomech}
 layers:
-  default: ['`', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '', ESC, Q, W, E, R, T, Y, U, I, O, P, BSPC, TAB, A, S, D, F, G, H, J, K, L, ;, '''', LSHFT, Z,
-    X, C, V, B, N, M, ',', ., /, RSHFT, MUTE, LGUI, LALT, LCTRL, lower, RET, SPACE, raise, RCTRL, RALT, RGUI, ENTER, RIGHT, UP, LEFT, DOWN]
-  lower:
+  Base:
+  - ESC
+  - '1'
+  - '2'
+  - '3'
+  - '4'
+  - '5'
+  - '6'
+  - '7'
+  - '8'
+  - '9'
+  - '0'
+  - '-'
+  - TAB
+  - Q
+  - W
+  - E
+  - R
+  - T
+  - Y
+  - U
+  - I
+  - O
+  - P
+  - '='
+  - LCTRL
+  - {t: A, h: LSHFT}
+  - {t: S, h: LCTRL}
+  - {t: D, h: LALT}
+  - {t: F, h: LGUI}
+  - G
+  - H
+  - {t: J, h: RGUI}
+  - {t: K, h: RALT}
+  - {t: L, h: RCTRL}
+  - {t: ;, h: RSHFT}
+  - ''''
+  - LSHFT
+  - Z
+  - X
+  - C
+  - V
+  - B
+  - N
+  - M
+  - ','
+  - .
+  - /
+  - RSHFT
+  - Adjust
+  - Symbols
+  - Nav
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - Gaming
+  - {t: ▽, type: trans}
+  - RCTRL
+  - RALT
+  - LALT
+  - SPACE
+  - ENTER
+  - BSPC
+  - {t: ▽, type: trans}
+  Symbols:
+  - '#'
+  - $
+  - '%'
+  - ^
+  - '&'
+  - '*'
+  - (
+  - )
+  - '['
+  - ']'
+  - '{'
+  - '}'
+  - <
+  - '>'
+  - '|'
+  - \
+  - '~'
+  - Sft+-
+  - +
+  - '-'
+  - '='
+  - ':'
+  - ;
+  - ''''
+  - '&eqeq'
+  - '&noteq'
+  - '&lshift'
+  - '&rshift'
+  - '&scope_op'
+  - '&arrow_op'
+  - ','
+  - .
+  - /
+  - Sft+/
+  - Sft+1
+  - '@'
+  - '#'
+  - '@'
+  - '&'
+  - '*'
+  - (
+  - )
+  - '['
+  - ']'
+  - '{'
+  - '}'
+  - +
+  - '-'
+  - Adjust
+  - {t: Symbols, type: held}
+  - Nav
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - Gaming
+  - {t: ▽, type: trans}
+  - RCTRL
+  - RALT
+  - LALT
+  - '&auto_paren'
+  - '&auto_bracket'
+  - '&auto_brace'
+  - {t: ▽, type: trans}
+  Nav:
+  - '&open_file'
+  - F1
+  - F2
+  - F3
+  - F4
+  - F5
+  - '&save_file'
+  - F7
+  - F8
+  - F9
+  - F10
+  - F12
+  - '&find_in_files'
+  - Ctl+H
+  - PAGE UP
+  - UP
+  - PAGE DOWN
+  - '&go_to_definition'
+  - HOME
+  - UP
+  - END
+  - VOL UP
+  - VOL DN
+  - MUTE
+  - {t: ▽, type: trans}
+  - LEFT
+  - DOWN
+  - RIGHT
+  - Ctl+TAB
+  - Ctl+Sft+TAB
+  - HOME
+  - DOWN
+  - END
+  - (
+  - )
+  - '|'
+  - Ctl+F
+  - '&quick_format'
+  - Ctl+Sft+X
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - PLAY
+  - PREV
+  - NEXT
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - Adjust
+  - Symbols
+  - {t: Nav, type: held}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - Gaming
+  - {t: ▽, type: trans}
+  - RCTRL
+  - RALT
+  - LALT
+  - SPACE
+  - ENTER
+  - BSPC
+  - {t: ▽, type: trans}
+  Gaming:
+  - ESC
+  - '1'
+  - '2'
+  - '3'
+  - '4'
+  - '5'
+  - '6'
+  - '7'
+  - '8'
+  - '9'
+  - '0'
+  - '-'
+  - TAB
+  - Q
+  - W
+  - E
+  - R
+  - T
+  - '{'
+  - '}'
+  - '['
+  - ']'
+  - UP
+  - \
+  - LCTRL
+  - A
+  - S
+  - D
+  - F
+  - G
+  - LEFT
+  - DOWN
+  - RIGHT
+  - ;
+  - ''''
+  - ENTER
+  - LSHFT
+  - Z
+  - X
+  - C
+  - V
+  - B
+  - '&toggle_weapon'
+  - ','
+  - .
+  - /
+  - SPACE
+  - RSHFT
+  - Adjust
+  - Symbols
+  - Nav
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: Gaming, type: held}
+  - {t: ▽, type: trans}
+  - RCTRL
+  - RALT
+  - LALT
+  - SPACE
+  - ENTER
+  - BSPC
+  - {t: ▽, type: trans}
+  Norwegian (momentary):
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - AltGr+0
+  - {t: ▽, type: trans}
+  - AltGr+7
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - AltGr+8
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - Adjust
+  - Symbols
+  - Nav
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - Gaming
+  - {t: ▽, type: trans}
+  - RCTRL
+  - RALT
+  - LALT
+  - SPACE
+  - ENTER
+  - BSPC
+  - {t: ▽, type: trans}
+  Adjust:
+  - BT CLR
+  - {t: BT, h: '0'}
+  - {t: BT, h: '1'}
+  - {t: BT, h: '2'}
+  - {t: BT, h: '3'}
+  - {t: BT, h: '4'}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
   - '&studio_unlock'
+  - PAGE UP
+  - PAGE DOWN
+  - END
+  - INS
+  - DEL
+  - VOL UP
+  - VOL DN
+  - MUTE
+  - PLAY
+  - PREV
+  - NEXT
   - F1
   - F2
   - F3
@@ -15,65 +361,9 @@ layers:
   - F9
   - F10
   - F11
-  - '`'
-  - '1'
-  - '2'
-  - '3'
-  - '4'
-  - '5'
-  - '6'
-  - '7'
-  - '8'
-  - '9'
-  - '0'
   - F12
-  - {t: ▽, type: trans}
-  - '!'
-  - '@'
-  - '#'
-  - $
-  - '%'
-  - ^
-  - '&'
-  - '*'
-  - (
-  - )
-  - '|'
-  - {t: ▽, type: trans}
-  - '='
-  - '-'
-  - +
-  - '{'
-  - '}'
-  - '['
-  - ']'
-  - ;
-  - ':'
-  - \
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {type: held}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - A
-  - B
-  - C
-  - D
-  - E
-  raise:
-  - BT CLR
-  - {t: BT, h: '0'}
-  - {t: BT, h: '1'}
-  - {t: BT, h: '2'}
-  - {t: BT, h: '3'}
-  - {t: BT, h: '4'}
+  - '&sys_reset'
+  - '&bootloader'
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -81,119 +371,43 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - INS
-  - PSCRN
-  - CMENU
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - PG UP
   - {t: ▽, type: trans}
-  - UP
+  - {t: Adjust, type: held}
+  - Symbols
+  - Nav
   - {t: ▽, type: trans}
-  - '0'
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - Gaming
+  - {t: ▽, type: trans}
+  - RCTRL
+  - RALT
   - LALT
-  - LCTRL
-  - LSHFT
-  - {t: ▽, type: trans}
-  - CLCK
-  - PG DN
-  - LEFT
-  - DOWN
-  - RIGHT
-  - DEL
+  - SPACE
+  - ENTER
   - BSPC
   - {t: ▽, type: trans}
-  - UNDO
-  - CUT
-  - COPY
-  - PASTE
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {type: held}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - A
-  - B
-  - C
-  - D
-  - E
-  adjust:
-  - BT CLR
-  - {t: BT, h: '0'}
-  - {t: BT, h: '1'}
-  - {t: BT, h: '2'}
-  - {t: BT, h: '3'}
-  - {t: BT, h: '4'}
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - EP TOG
-  - RGB HUD
-  - RGB HUI
-  - RGB SAD
-  - RGB SAI
-  - RGB EFF
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - RGB BRD
-  - RGB BRI
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - RGB TOG
-  - ''
-  - ''
-  - ''
-  - {type: held}
-  - ''
-  - ''
-  - {type: held}
-  - ''
-  - ''
-  - ''
-  - A
-  - B
-  - C
-  - D
-  - E
+combos:
+- p: [1, 2]
+  k: '~'
+- p: [2, 3]
+  k: '@'
+- p: [3, 4]
+  k: '#'
+- p: [4, 5]
+  k: $
+- p: [20, 21]
+  k: CAPS
+- p: [45, 47, 1]
+  k: {t: BT, h: '0'}
+- p: [45, 47, 2]
+  k: {t: BT, h: '1'}
+- p: [45, 47, 10]
+  k: BT CLR
+- p: [45, 47, 5]
+  k: '&bootloader'
+- p: [45, 47, 4]
+  k: '&sys_reset'
