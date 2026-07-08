@@ -55,22 +55,19 @@
             , <&key_physical_attrs 100 100 1200  315       0     0     0>
             , <&key_physical_attrs 100 100 1300  330       0     0     0>
             , <&key_physical_attrs 100 100 1400  330       0     0     0>
-            , <&key_physical_attrs 100 100  630  335       0     0     0>
-            , <&key_physical_attrs 100 100  175  430       0     0     0>
-            , <&key_physical_attrs 100 100  275  415       0     0     0>
-            , <&key_physical_attrs 100 100  375  415       0     0     0>
-            , <&key_physical_attrs 100 100  475  435       0     0     0>
-            , <&key_physical_attrs 100 150  575  435       0     0     0>
-            , <&key_physical_attrs 100 150  825  435       0     0     0>
-            , <&key_physical_attrs 100 100  925  435       0     0     0>
-            , <&key_physical_attrs 100 100 1025  415       0     0     0>
-            , <&key_physical_attrs 100 100 1125  415       0     0     0>
-            , <&key_physical_attrs 100 100 1225  435       0     0     0>
-            , <&key_physical_attrs 100 100 1125  630       0     0     0>
-            , <&key_physical_attrs 100 100 1225  630       0     0     0>
-            , <&key_physical_attrs 100 100 1125  530       0     0     0>
-            , <&key_physical_attrs 100 100 1025  630       0     0     0>
-            , <&key_physical_attrs 100 100 1125  730       0     0     0>
+            // Row 4: Thumb cluster
+            , <&key_physical_attrs 100 100    0  430       0     0     0>
+            , <&key_physical_attrs 100 100  100  430       0     0     0>
+            , <&key_physical_attrs 100 100  200  415       0     0     0>
+            , <&key_physical_attrs 100 100  300  400       0     0     0>
+            , <&key_physical_attrs 100 100  400  415       0     0     0>
+            , <&key_physical_attrs 100 100  500  430       0     0     0>
+            , <&key_physical_attrs 100 100  900  430       0     0     0>
+            , <&key_physical_attrs 100 100 1000  415       0     0     0>
+            , <&key_physical_attrs 100 100 1100  400       0     0     0>
+            , <&key_physical_attrs 100 100 1200  415       0     0     0>
+            , <&key_physical_attrs 100 100 1300  430       0     0     0>
+            , <&key_physical_attrs 100 100 1400  430       0     0     0>
             ;
     };
 

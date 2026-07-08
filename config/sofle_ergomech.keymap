@@ -348,10 +348,10 @@
             &kp LCTRL    &hm_l LSHFT A &hm_l LCTRL S &hm_l LALT D &hm_l LGUI F &kp G                           &kp H        &hm_r RGUI J &hm_r RALT K &hm_r RCTRL L &hm_r RSHFT SEMI &kp APOS
             // Row 4: QWERTY Bottom
             &kp LSHFT    &kp Z        &kp X        &kp C        &kp V        &kp B                           &kp N        &kp M        &kp COMMA    &kp PERIOD   &kp SLASH    &kp RSHFT
-            // Row 5: Thumb Cluster (left side)
-            &kp LALT     &mo ADJUST                                                                                       &my_layer_tap SYMBOLS SPACE  &my_layer_tap NAV BSPC
-            // Row 6: Thumb Cluster (right side) - Right position is Norwegian momentary layer
-                                                &my_layer_tap SYMBOLS SPACE  &my_layer_tap SYMBOLS BSPC          &kp ENTER    &my_layer_tap GAMING TAB   &kp RCTRL    &mo NORWEGIAN
+            // Row 5: Thumb cluster top tier
+            &mo ADJUST   &mo SYMBOLS  &mo NAV      &trans       &trans       &trans                          &trans       &mo GAMING   &trans       &kp RCTRL    &kp RALT
+            // Row 6: Thumb cluster bottom tier
+            &kp LALT     &kp SPACE    &kp ENTER    &kp BSPC     &trans
             >;
             sensor-bindings = <&my_encoder_cycle_base>;
         };
@@ -368,10 +368,10 @@
             &eqeq       &noteq      &lshift     &rshift     &scope_op   &arrow_op                        &kp COMMA    &kp PERIOD   &kp SLASH    &kp LS(SLASH) &kp LS(NUMBER_1)     &kp AT
             // Row 4: Alternate home-row symbol access
             &kp HASH     &kp AT       &kp AMPS      &kp ASTRK &kp LPAR     &kp RPAR                        &kp LBKT &kp RBKT &kp LBRC &kp RBRC &kp PLUS     &kp MINUS
-            // Row 5: Thumb cluster
-            &trans       &trans                                                                                          &trans       &trans
-            // Row 6: Thumb cluster  
-                                                &trans       &trans                        &auto_paren  &auto_bracket  &auto_brace  &trans
+            // Row 5: Thumb cluster top tier
+            &mo ADJUST   &mo SYMBOLS  &mo NAV      &trans       &trans       &trans                          &trans       &mo GAMING   &trans       &kp RCTRL    &kp RALT
+            // Row 6: Thumb cluster bottom tier - Auto-close bracket macros
+            &kp LALT     &auto_paren  &auto_bracket &auto_brace  &trans
             >;
             sensor-bindings = <&my_encoder_cycle_symbols>;
         };
@@ -388,10 +388,10 @@
             &trans       &kp LEFT     &kp DOWN     &kp RIGHT    &kp LC(TAB)  &kp LC(LS(TAB))                &kp HOME     &kp DOWN     &kp END      &kp LPAR     &kp RPAR     &kp PIPE
             // Row 4: Search + Replace + Formatting
             &kp LC(F)    &quick_format &kp LC(LS(X)) &trans      &trans       &trans                          &kp C_PLAY   &kp C_PREV   &kp C_NEXT   &trans       &trans       &trans
-            // Row 5: Thumb cluster
-            &trans       &trans                                                                                          &trans       &trans
-            // Row 6: Thumb cluster
-                                                &trans       &trans                        &trans       &trans         &trans       &trans
+            // Row 5: Thumb cluster top tier
+            &mo ADJUST   &mo SYMBOLS  &mo NAV      &trans       &trans       &trans                          &trans       &mo GAMING   &trans       &kp RCTRL    &kp RALT
+            // Row 6: Thumb cluster bottom tier
+            &kp LALT     &kp SPACE    &kp ENTER    &kp BSPC     &trans
             >;
             sensor-bindings = <&my_encoder_cycle_nav>;
         };
@@ -406,12 +406,12 @@
             &kp TAB      &kp Q        &kp W        &kp E        &kp R        &kp T                           &kp LBRC   &kp RBRC   &kp LBKT   &kp RBKT   &kp UP       &kp BSLH
             // Row 3: Quick access combat keys
             &kp LCTRL    &kp A        &kp S        &kp D        &kp F        &kp G                           &kp LEFT     &kp DOWN     &kp RIGHT    &kp SEMI     &kp APOS     &kp ENTER
-            // Row 4: Extra hotbar + modifier keys
-            &kp LSHFT    &kp Z        &kp X        &kp C        &kp V        &kp B                           &kp M        &kp COMMA    &kp PERIOD   &kp SLASH    &kp SPACE    &kp RSHFT
-            // Row 5: Thumb cluster - push to talk
-            &kp LALT     &trans                                                                                          &kp SPACE    &push_to_talk
-            // Row 6: Thumb cluster
-                                                &kp SPACE    &kp BSPC                      &kp ENTER    &trans         &kp RCTRL    &kp RALT
+            // Row 4: Extra hotbar + modifier keys + toggle weapon
+            &kp LSHFT    &kp Z        &kp X        &kp C        &kp V        &kp B                           &toggle_weapon &kp COMMA    &kp PERIOD   &kp SLASH    &kp SPACE    &kp RSHFT
+            // Row 5: Thumb cluster top tier
+            &mo ADJUST   &mo SYMBOLS  &mo NAV      &trans       &trans       &trans                          &trans       &mo GAMING   &trans       &kp RCTRL    &kp RALT
+            // Row 6: Thumb cluster bottom tier
+            &kp LALT     &kp SPACE    &kp ENTER    &kp BSPC     &trans
             >;
             sensor-bindings = <&my_encoder_cycle_gaming>;
         };
@@ -430,10 +430,10 @@
             &trans       &kp RA(N0)   &trans       &kp RA(N7)   &trans       &trans                          &trans       &trans       &trans       &kp RA(N8)   &trans       &trans
             // Row 4: All transparent
             &trans       &trans       &trans       &trans       &trans       &trans                          &trans       &trans       &trans       &trans       &trans       &trans
-            // Row 5: All transparent
-            &trans       &trans                                                                                          &trans       &trans
-            // Row 6: All transparent
-                                                &trans       &trans                        &trans       &trans         &trans       &trans
+            // Row 5: Thumb cluster top tier
+            &mo ADJUST   &mo SYMBOLS  &mo NAV      &trans       &trans       &trans                          &trans       &mo GAMING   &trans       &kp RCTRL    &kp RALT
+            // Row 6: Thumb cluster bottom tier
+            &kp LALT     &kp SPACE    &kp ENTER    &kp BSPC     &trans
             >;
             sensor-bindings = <&my_encoder_cycle_norwegian>;
             // (Norwegian Alt-code notes removed to avoid DT parsing edge-case comments)
@@ -451,10 +451,10 @@
             &kp F1 &kp F2 &kp F3 &kp F4 &kp F5 &kp F6 &kp F7 &kp F8 &kp F9 &kp F10 &kp F11 &kp F12
             // Row 4: Reset/Bootloader
             &sys_reset   &bootloader  &trans       &trans       &trans       &trans                          &trans       &trans       &trans       &trans       &trans       &trans
-            // Row 5: Thumb cluster
-            &trans       &trans                                                                                          &trans       &trans
-            // Row 6: Thumb cluster
-                                                &trans       &trans                        &trans       &trans         &trans       &trans
+            // Row 5: Thumb cluster top tier
+            &mo ADJUST   &mo SYMBOLS  &mo NAV      &trans       &trans       &trans                          &trans       &mo GAMING   &trans       &kp RCTRL    &kp RALT
+            // Row 6: Thumb cluster bottom tier
+            &kp LALT     &kp SPACE    &kp ENTER    &kp BSPC     &trans
             >;
             sensor-bindings = <&my_encoder_cycle_adjust>;
         };
