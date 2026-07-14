@@ -333,7 +333,7 @@
     };
 
     // ==================== KEYMAP ====================
-        keymap {
+            keymap {
         compatible = "zmk,keymap";
 
         layer_0 {
@@ -393,7 +393,7 @@
             bindings = <
 &trans       &trans       &trans       &trans       &trans       &trans                            &trans       &trans       &trans       &trans       &trans       &trans
 &trans       &trans       &trans       &trans       &trans       &trans                            &trans       &trans       &trans       &trans       &trans       &trans
-&trans       &th_nordic NO_AA A &trans &trans       &trans       &trans                            &trans       &trans       &trans       &trans       &trans       &trans
+&trans       &th_nordic LBKT A &trans  &th_nordic SQT E &trans   &trans                            &trans       &trans       &trans       &th_nordic SEMI O &trans  &trans
 &trans       &trans       &trans       &trans       &trans       &trans       &trans     &trans    &trans       &trans       &trans       &trans       &trans       &trans
                           &trans       &trans       &trans       &trans       &trans                            &trans       &trans       &trans       &trans
 &kp C_PLAY_PAUSE &kp RIGHT_ARROW &kp UP_ARROW &kp LEFT_ARROW &kp DOWN_ARROW
