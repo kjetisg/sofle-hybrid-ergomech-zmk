@@ -333,7 +333,7 @@
     };
 
     // ==================== KEYMAP ====================
-    keymap {
+        keymap {
         compatible = "zmk,keymap";
 
         layer_0 {
@@ -356,7 +356,7 @@
 &trans       &kp EXCL     &kp LT       &kp GT       &kp EQUAL    &kp DLLR                          &kp AMPS     &auto_brace  &kp RBKT     &kp BSLH     &kp PRCNT    &kp F12
 &trans       &kp GRAVE    &kp MINUS    &kp PLUS     &kp ASTRK    &kp COLON                         &scope_op    &auto_paren  &kp RPAR     &kp PIPE     &kp QMARK    &kp PIPE
 &trans       &kp TILDE    &kp UNDER    &kp FSLH     &kp POUND    &eqeq        &trans     &trans    &arrow_op    &auto_bracket &kp RBRC    &kp AT       &kp CARET    &trans
-                          &trans       &trans       &trans       &trans                                         &trans       &trans       &trans       &trans
+                          &trans       &trans       &trans       &trans       &trans                            &trans       &trans       &trans       &trans
 &kp C_PLAY_PAUSE &kp RIGHT_ARROW &kp UP_ARROW &kp LEFT_ARROW &kp DOWN_ARROW
             >;
             sensor-bindings = <&my_encoder_cycle_symbols>;
@@ -369,7 +369,7 @@
 &trans       &save_file   &open_file   &find_in_files &go_to_definition &quick_format                  &kp HOME     &kp PGDN     &kp PGUP     &kp END      &kp DEL      &trans
 &trans       &kp LGUI     &kp LALT     &kp LCTRL    &kp LSHIFT   &trans                            &kp LEFT     &kp DOWN     &kp UP       &kp RIGHT    &kp BSPC     &trans
 &trans       &trans       &trans       &trans       &trans       &trans       &trans     &trans    &trans       &trans       &trans       &trans       &trans       &trans
-                          &trans       &trans       &trans       &trans                                         &trans       &trans       &trans       &trans
+                          &trans       &trans       &trans       &trans       &trans                            &trans       &trans       &trans       &trans
 &kp C_PLAY_PAUSE &kp RIGHT_ARROW &kp UP_ARROW &kp LEFT_ARROW &kp DOWN_ARROW
             >;
             sensor-bindings = <&my_encoder_cycle_nav>;
@@ -382,7 +382,7 @@
 &kp TAB      &kp Q        &kp W        &kp E        &kp R        &kp T                             &trans       &trans       &trans       &trans       &trans       &trans
 &kp LSHFT    &kp A        &kp S        &kp D        &kp F        &kp G                             &trans       &trans       &trans       &trans       &trans       &trans
 &kp LCTRL    &kp Z        &kp X        &kp C        &kp V        &kp B        &toggle_weapon &trans  &trans       &trans       &trans       &trans       &trans       &trans
-                          &trans       &trans       &trans       &kp SPACE                                      &trans       &trans       &trans       &trans
+                          &trans       &trans       &trans       &kp SPACE    &trans                            &trans       &trans       &trans       &trans
 &kp C_PLAY_PAUSE &kp RIGHT_ARROW &kp UP_ARROW &kp LEFT_ARROW &kp DOWN_ARROW
             >;
             sensor-bindings = <&my_encoder_cycle_gaming>;
@@ -395,7 +395,7 @@
 &trans       &trans       &trans       &trans       &trans       &trans                            &trans       &trans       &trans       &trans       &trans       &trans
 &trans       &th_nordic NO_AA A &trans &trans       &trans       &trans                            &trans       &trans       &trans       &trans       &trans       &trans
 &trans       &trans       &trans       &trans       &trans       &trans       &trans     &trans    &trans       &trans       &trans       &trans       &trans       &trans
-                          &trans       &trans       &trans       &trans                                         &trans       &trans       &trans       &trans
+                          &trans       &trans       &trans       &trans       &trans                            &trans       &trans       &trans       &trans
 &kp C_PLAY_PAUSE &kp RIGHT_ARROW &kp UP_ARROW &kp LEFT_ARROW &kp DOWN_ARROW
             >;
             sensor-bindings = <&my_encoder_cycle_norwegian>;
@@ -408,7 +408,7 @@
 &ext_power EP_TOG &rgb_ug RGB_HUD &rgb_ug RGB_HUI &rgb_ug RGB_SAD &rgb_ug RGB_SAI &rgb_ug RGB_EFF     &trans       &trans       &trans       &trans       &trans       &trans
 &trans       &trans       &rgb_ug RGB_BRI &trans       &trans       &trans                            &trans       &trans       &trans       &trans       &trans       &trans
 &trans       &trans       &trans       &trans       &trans       &trans       &rgb_ug RGB_TOG &trans &trans     &trans       &trans       &trans       &trans       &trans
-                          &trans       &trans       &trans       &trans                                         &trans       &trans       &trans       &trans
+                          &trans       &trans       &trans       &trans       &trans                            &trans       &trans       &trans       &trans
 &kp C_PLAY_PAUSE &kp RIGHT_ARROW &kp UP_ARROW &kp LEFT_ARROW &kp DOWN_ARROW
             >;
             sensor-bindings = <&my_encoder_cycle_adjust>;
