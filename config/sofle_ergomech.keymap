@@ -334,127 +334,82 @@
 
     // ==================== KEYMAP ====================
     keymap {
-    compatible = "zmk,keymap";
+        compatible = "zmk,keymap";
 
-        // ========== LAYER 0: BASE QWERTY WITH HOME-ROW MODS ==========
         layer_0 {
-            label = "Base";
-            // Row 1: Numbers + Function Row
+            label = "BASE";
             bindings = <
-            &kp ESC      &kp N1       &kp N2       &kp N3       &kp N4       &kp N5                          &kp N6       &kp N7       &kp N8       &kp N9       &kp N0       &kp MINUS
-            // Row 2: QWERTY Top
-            &kp TAB      &kp Q        &kp W        &kp E        &kp R        &kp T                           &kp Y        &kp U        &kp I        &kp O        &kp P        &kp EQUAL
-            // Row 3: QWERTY Home Row + Home-Row Mods (A=Shift, S=Ctrl, D=Alt, F=GUI)
-            &kp LCTRL    &hm_l LSHFT A &hm_l LCTRL S &hm_l LALT D &hm_l LGUI F &kp G                           &kp H        &hm_r RGUI J &hm_r RALT K &hm_r RCTRL L &hm_r RSHFT SEMI &kp APOS
-            // Row 4: QWERTY Bottom
-            &kp LSHFT    &kp Z        &kp X        &kp C        &kp V        &kp B                           &kp N        &kp M        &kp COMMA    &kp PERIOD   &kp SLASH    &kp RSHFT
-            // Row 5: Thumb cluster top tier
-            &mo ADJUST   &mo SYMBOLS  &mo NAV      &trans       &trans       &trans                          &trans       &mo GAMING   &trans       &kp RCTRL    &kp RALT
-            // Row 6: Thumb cluster bottom tier
-            &kp LALT     &kp SPACE    &kp ENTER    &kp BSPC     &trans
+&kp ESCAPE   &kp N1       &kp N2       &kp N3       &kp N4       &kp N5                            &kp N6       &kp N7       &kp N8       &kp N9       &kp N0       &kp MINUS
+&kp TAB      &kp Q        &kp W        &kp E        &kp R        &kp T                             &kp Y        &kp U        &kp I        &kp O        &kp P        &kp BSLH
+&kp LSHFT    &hm_l LGUI A &hm_l LALT S &hm_l LCTRL D &hm_l LSHIFT F &kp G                           &kp H        &hm_r RSHIFT J &hm_r RCTRL K &hm_r RALT L &hm_r RGUI SEMI &kp SQT
+&kp LCTRL    &kp Z        &kp X        &kp C        &kp V        &kp B        &kp C_MUTE &none     &kp N        &kp M        &kp COMMA    &kp DOT      &kp FSLH     &kp RSHFT
+                          &kp LGUI     &kp LALT     &kp RETURN   &kp SPACE    &mo SYMBOLS                       &mo NAV      &kp SPACE    &mo NORWEGIAN &kp RCTRL
+&kp C_PLAY_PAUSE &kp RIGHT_ARROW &kp UP_ARROW &kp LEFT_ARROW &kp DOWN_ARROW
             >;
             sensor-bindings = <&my_encoder_cycle_base>;
         };
 
-        // ========== LAYER 1: SYMBOLS FOR C++ ==========
         layer_1 {
-            label = "Symbols";
-            // Row 1: Brackets and grouping symbols
+            label = "SYMBOLS";
             bindings = <
-            &kp HASH     &kp DLLR     &kp PRCNT    &kp CARET    &kp AMPS     &kp ASTRK                         &kp LPAR     &kp RPAR     &kp LBKT &kp RBKT &kp LBRC &kp RBRC
-            // Row 2: Delimiters, pipes, and assignment operators
-            &kp LT       &kp GT       &kp PIPE     &kp BSLH      &kp TILDE    &kp LS(MINUS)                    &kp PLUS     &kp MINUS    &kp EQUAL    &kp COLON           &kp SEMI      &kp SQT
-            // Row 3: C++ operator macros and common separators
-            &eqeq       &noteq      &lshift     &rshift     &scope_op   &arrow_op                        &kp COMMA    &kp PERIOD   &kp SLASH    &kp LS(SLASH) &kp LS(NUMBER_1)     &kp AT
-            // Row 4: Alternate home-row symbol access
-            &kp HASH     &kp AT       &kp AMPS      &kp ASTRK &kp LPAR     &kp RPAR                        &kp LBKT &kp RBKT &kp LBRC &kp RBRC &kp PLUS     &kp MINUS
-            // Row 5: Thumb cluster top tier
-            &mo ADJUST   &mo SYMBOLS  &mo NAV      &trans       &trans       &trans                          &trans       &mo GAMING   &trans       &kp RCTRL    &kp RALT
-            // Row 6: Thumb cluster bottom tier - Auto-close bracket macros
-            &kp LALT     &auto_paren  &auto_bracket &auto_brace  &trans
+&trans       &kp F1       &kp F2       &kp F3       &kp F4       &kp F5                            &kp F6       &kp F7       &kp F8       &kp F9       &kp F10      &kp F11
+&trans       &kp EXCL     &kp LT       &kp GT       &kp EQUAL    &kp DLLR                          &kp AMPS     &auto_brace  &kp RBKT     &kp BSLH     &kp PRCNT    &kp F12
+&trans       &kp GRAVE    &kp MINUS    &kp PLUS     &kp ASTRK    &kp COLON                         &scope_op    &auto_paren  &kp RPAR     &kp PIPE     &kp QMARK    &kp PIPE
+&trans       &kp TILDE    &kp UNDER    &kp FSLH     &kp POUND    &eqeq        &trans     &trans    &arrow_op    &auto_bracket &kp RBRC    &kp AT       &kp CARET    &trans
+                          &trans       &trans       &trans       &trans                                         &trans       &trans       &trans       &trans
+&kp C_PLAY_PAUSE &kp RIGHT_ARROW &kp UP_ARROW &kp LEFT_ARROW &kp DOWN_ARROW
             >;
             sensor-bindings = <&my_encoder_cycle_symbols>;
         };
 
-        // ========== LAYER 2: NAVIGATION & IDE SHORTCUTS ==========
         layer_2 {
-            label = "Nav";
-            // Row 1: IDE shortcuts
+            label = "NAV";
             bindings = <
-            &open_file   &kp F1       &kp F2       &kp F3       &kp F4       &kp F5                          &save_file   &kp F7       &kp F8       &kp F9       &kp F10      &kp F12
-            // Row 2: Quick navigation
-            &find_in_files &kp LC(H)  &kp PAGE_UP  &kp UP       &kp PAGE_DOWN &go_to_definition              &kp HOME     &kp UP       &kp END      &kp C_VOL_UP &kp C_VOL_DN &kp C_MUTE
-            // Row 3: Vim-inspired + Tab navigation  
-            &trans       &kp LEFT     &kp DOWN     &kp RIGHT    &kp LC(TAB)  &kp LC(LS(TAB))                &kp HOME     &kp DOWN     &kp END      &kp LPAR     &kp RPAR     &kp PIPE
-            // Row 4: Search + Replace + Formatting
-            &kp LC(F)    &quick_format &kp LC(LS(X)) &trans      &trans       &trans                          &kp C_PLAY   &kp C_PREV   &kp C_NEXT   &trans       &trans       &trans
-            // Row 5: Thumb cluster top tier
-            &mo ADJUST   &mo SYMBOLS  &mo NAV      &trans       &trans       &trans                          &trans       &mo GAMING   &trans       &kp RCTRL    &kp RALT
-            // Row 6: Thumb cluster bottom tier
-            &kp LALT     &kp SPACE    &kp ENTER    &kp BSPC     &trans
+&trans       &trans       &trans       &trans       &trans       &trans                            &trans       &trans       &trans       &trans       &trans       &trans
+&trans       &save_file   &open_file   &find_in_files &go_to_definition &quick_format                  &kp HOME     &kp PGDN     &kp PGUP     &kp END      &kp DEL      &trans
+&trans       &kp LGUI     &kp LALT     &kp LCTRL    &kp LSHIFT   &trans                            &kp LEFT     &kp DOWN     &kp UP       &kp RIGHT    &kp BSPC     &trans
+&trans       &trans       &trans       &trans       &trans       &trans       &trans     &trans    &trans       &trans       &trans       &trans       &trans       &trans
+                          &trans       &trans       &trans       &trans                                         &trans       &trans       &trans       &trans
+&kp C_PLAY_PAUSE &kp RIGHT_ARROW &kp UP_ARROW &kp LEFT_ARROW &kp DOWN_ARROW
             >;
             sensor-bindings = <&my_encoder_cycle_nav>;
         };
 
-        // ========== LAYER 3: GAMING ==========
         layer_3 {
-            label = "Gaming";
-            // Row 1: Ability hotbar (1-6)
+            label = "GAMING";
             bindings = <
-            &kp ESC      &kp N1       &kp N2       &kp N3       &kp N4       &kp N5                          &kp N6       &kp N7       &kp N8       &kp N9       &kp N0       &kp MINUS
-            // Row 2: WASD movement
-            &kp TAB      &kp Q        &kp W        &kp E        &kp R        &kp T                           &kp LBRC   &kp RBRC   &kp LBKT   &kp RBKT   &kp UP       &kp BSLH
-            // Row 3: Quick access combat keys
-            &kp LCTRL    &kp A        &kp S        &kp D        &kp F        &kp G                           &kp LEFT     &kp DOWN     &kp RIGHT    &kp SEMI     &kp APOS     &kp ENTER
-            // Row 4: Extra hotbar + modifier keys + toggle weapon
-            &kp LSHFT    &kp Z        &kp X        &kp C        &kp V        &kp B                           &toggle_weapon &kp COMMA    &kp PERIOD   &kp SLASH    &kp SPACE    &kp RSHFT
-            // Row 5: Thumb cluster top tier
-            &mo ADJUST   &mo SYMBOLS  &mo NAV      &trans       &trans       &trans                          &trans       &mo GAMING   &trans       &kp RCTRL    &kp RALT
-            // Row 6: Thumb cluster bottom tier
-            &kp LALT     &kp SPACE    &kp ENTER    &kp BSPC     &trans
+&kp ESC      &kp N1       &kp N2       &kp N3       &kp N4       &kp N5                            &trans       &trans       &trans       &trans       &trans       &trans
+&kp TAB      &kp Q        &kp W        &kp E        &kp R        &kp T                             &trans       &trans       &trans       &trans       &trans       &trans
+&kp LSHFT    &kp A        &kp S        &kp D        &kp F        &kp G                             &trans       &trans       &trans       &trans       &trans       &trans
+&kp LCTRL    &kp Z        &kp X        &kp C        &kp V        &kp B        &toggle_weapon &trans  &trans       &trans       &trans       &trans       &trans       &trans
+                          &trans       &trans       &trans       &kp SPACE                                      &trans       &trans       &trans       &trans
+&kp C_PLAY_PAUSE &kp RIGHT_ARROW &kp UP_ARROW &kp LEFT_ARROW &kp DOWN_ARROW
             >;
             sensor-bindings = <&my_encoder_cycle_gaming>;
         };
 
-        // ========== LAYER 4: NORWEGIAN MOMENTARY LAYER ==========
-        // This layer is momentarily activated by holding Right-Alt key on base layer
-        // Maps: A→Å, E→Æ, O→Ø
         layer_4 {
-            label = "Norwegian (momentary)";
-            // Row 1: All transparent
+            label = "NORWEGIAN";
             bindings = <
-            &trans       &trans       &trans       &trans       &trans       &trans                          &trans       &trans       &trans       &trans       &trans       &trans
-            // Row 2: All transparent
-            &trans       &trans       &trans       &trans       &trans       &trans                          &trans       &trans       &trans       &trans       &trans       &trans
-            // Row 3: A→Å, E→Æ, O→Ø (on the home row)
-            &trans       &kp RA(N0)   &trans       &kp RA(N7)   &trans       &trans                          &trans       &trans       &trans       &kp RA(N8)   &trans       &trans
-            // Row 4: All transparent
-            &trans       &trans       &trans       &trans       &trans       &trans                          &trans       &trans       &trans       &trans       &trans       &trans
-            // Row 5: Thumb cluster top tier
-            &mo ADJUST   &mo SYMBOLS  &mo NAV      &trans       &trans       &trans                          &trans       &mo GAMING   &trans       &kp RCTRL    &kp RALT
-            // Row 6: Thumb cluster bottom tier
-            &kp LALT     &kp SPACE    &kp ENTER    &kp BSPC     &trans
+&trans       &trans       &trans       &trans       &trans       &trans                            &trans       &trans       &trans       &trans       &trans       &trans
+&trans       &trans       &trans       &trans       &trans       &trans                            &trans       &trans       &trans       &trans       &trans       &trans
+&trans       &th_nordic NO_AA A &trans &trans       &trans       &trans                            &trans       &trans       &trans       &trans       &trans       &trans
+&trans       &trans       &trans       &trans       &trans       &trans       &trans     &trans    &trans       &trans       &trans       &trans       &trans       &trans
+                          &trans       &trans       &trans       &trans                                         &trans       &trans       &trans       &trans
+&kp C_PLAY_PAUSE &kp RIGHT_ARROW &kp UP_ARROW &kp LEFT_ARROW &kp DOWN_ARROW
             >;
             sensor-bindings = <&my_encoder_cycle_norwegian>;
-            // (Norwegian Alt-code notes removed to avoid DT parsing edge-case comments)
         };
 
-        // ========== LAYER 5: ADJUST/RGB/BT ==========
         layer_5 {
-            label = "Adjust";
-            // Row 1: Bluetooth profiles
+            label = "ADJUST";
             bindings = <
-            &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &trans &trans &trans &trans &trans &trans
-            // Row 2: Utility, unlock, and media keys
-            &studio_unlock &kp PAGE_UP &kp PAGE_DOWN &kp END &kp INS &kp DEL &kp C_VOL_UP &kp C_VOL_DN &kp C_MUTE &kp C_PLAY &kp C_PREV &kp C_NEXT
-            // Row 3: Function row for utilities
-            &kp F1 &kp F2 &kp F3 &kp F4 &kp F5 &kp F6 &kp F7 &kp F8 &kp F9 &kp F10 &kp F11 &kp F12
-            // Row 4: Reset/Bootloader
-            &sys_reset   &bootloader  &trans       &trans       &trans       &trans                          &trans       &trans       &trans       &trans       &trans       &trans
-            // Row 5: Thumb cluster top tier
-            &mo ADJUST   &mo SYMBOLS  &mo NAV      &trans       &trans       &trans                          &trans       &mo GAMING   &trans       &kp RCTRL    &kp RALT
-            // Row 6: Thumb cluster bottom tier
-            &kp LALT     &kp SPACE    &kp ENTER    &kp BSPC     &trans
+&bt BT_CLR   &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4                      &trans       &trans       &trans       &trans       &trans       &trans
+&ext_power EP_TOG &rgb_ug RGB_HUD &rgb_ug RGB_HUI &rgb_ug RGB_SAD &rgb_ug RGB_SAI &rgb_ug RGB_EFF     &trans       &trans       &trans       &trans       &trans       &trans
+&trans       &trans       &rgb_ug RGB_BRI &trans       &trans       &trans                            &trans       &trans       &trans       &trans       &trans       &trans
+&trans       &trans       &trans       &trans       &trans       &trans       &rgb_ug RGB_TOG &trans &trans     &trans       &trans       &trans       &trans       &trans
+                          &trans       &trans       &trans       &trans                                         &trans       &trans       &trans       &trans
+&kp C_PLAY_PAUSE &kp RIGHT_ARROW &kp UP_ARROW &kp LEFT_ARROW &kp DOWN_ARROW
             >;
             sensor-bindings = <&my_encoder_cycle_adjust>;
         };
