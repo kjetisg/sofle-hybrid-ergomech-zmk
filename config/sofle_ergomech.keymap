@@ -132,35 +132,30 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp LC(S)>;
-            label = "SAVE_FILE";
         };
 
         open_file: open_file {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp LC(K) &kp LC(O)>;
-            label = "OPEN_FILE";
         };
 
         find_in_files: find_in_files {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp LC(LS(F))>;
-            label = "FIND_IN_FILES";
         };
 
         go_to_definition: go_to_definition {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp LC(LS(I))>;
-            label = "GOTO_DEFINITION";
         };
 
         quick_format: quick_format {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp LC(LA(F))>;
-            label = "FORMAT_DOC";
         };
 
         // Programming helpers
@@ -168,14 +163,12 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp HASH &kp I &kp F &kp D &kp E &kp F &kp SPACE>;
-            label = "IFNDEF";
         };
 
         lambda_cpp: lambda_cpp {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp LBRC &kp RBRC &kp SPACE &kp LPAR &kp RPAR &kp LEFT &kp LEFT>;
-            label = "LAMBDA_CPP";
         };
 
         // Brackets with auto-close
@@ -183,63 +176,54 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp LPAR &kp RPAR &kp LEFT>;
-            label = "AUTO_PAREN";
         };
 
         auto_bracket: auto_bracket {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp LBRC &kp RBRC &kp LEFT>;
-            label = "AUTO_BRACKET";
         };
 
         auto_brace: auto_brace {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp LBKT &kp RBKT &kp LEFT>;
-            label = "AUTO_BRACE";
         };
 
         eqeq: eqeq {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp EQUAL &kp EQUAL>;
-            label = "EQEQ";
         };
 
         noteq: noteq {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp LS(NUMBER_1) &kp EQUAL>;
-            label = "NOTEQ";
         };
 
         lshift: lshift {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp LT &kp LT>;
-            label = "LSHIFT";
         };
 
         rshift: rshift {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp GT &kp GT>;
-            label = "RSHIFT";
         };
 
         scope_op: scope_op {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp LS(SEMICOLON) &kp LS(SEMICOLON)>;
-            label = "SCOPE";
         };
 
         arrow_op: arrow_op {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp MINUS &kp GT>;
-            label = "ARROW";
         };
 
         // Gaming macros
@@ -247,14 +231,12 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp TAB>;
-            label = "TOGGLE_WEAPON";
         };
 
         push_to_talk: push_to_talk {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp V>;
-            label = "PUSH_TO_TALK";
         };
     };
 
@@ -337,7 +319,7 @@
         compatible = "zmk,keymap";
 
         layer_0 {
-            label = "BASE";
+            display-name = "BASE";
             bindings = <
 &kp ESCAPE   &kp N1       &kp N2       &kp N3       &kp N4       &kp N5                            &kp N6       &kp N7       &kp N8       &kp N9       &kp N0       &kp MINUS
 &kp TAB      &kp Q        &kp W        &kp E        &kp R        &kp T                             &kp Y        &kp U        &kp I        &kp O        &kp P        &kp BSLH
@@ -350,7 +332,7 @@
         };
 
         layer_1 {
-            label = "SYMBOLS";
+            display-name = "SYMBOLS";
             bindings = <
 &trans       &kp F1       &kp F2       &kp F3       &kp F4       &kp F5                            &kp F6       &kp F7       &kp F8       &kp F9       &kp F10      &kp F11
 &trans       &kp EXCL     &kp LT       &kp GT       &kp EQUAL    &kp DLLR                          &kp AMPS     &auto_brace  &kp RBKT     &kp BSLH     &kp PRCNT    &kp F12
@@ -363,7 +345,7 @@
         };
 
         layer_2 {
-            label = "NAV";
+            display-name = "NAV";
             bindings = <
 &trans       &trans       &trans       &trans       &trans       &trans                            &trans       &trans       &trans       &trans       &trans       &trans
 &trans       &save_file   &open_file   &find_in_files &go_to_definition &quick_format                  &kp HOME     &kp PGDN     &kp PGUP     &kp END      &kp DEL      &trans
@@ -376,7 +358,7 @@
         };
 
         layer_3 {
-            label = "GAMING";
+            display-name = "GAMING";
             bindings = <
 &kp ESC      &kp N1       &kp N2       &kp N3       &kp N4       &kp N5                            &trans       &trans       &trans       &trans       &trans       &trans
 &kp TAB      &kp Q        &kp W        &kp E        &kp R        &kp T                             &trans       &trans       &trans       &trans       &trans       &trans
@@ -389,7 +371,7 @@
         };
 
         layer_4 {
-            label = "NORWEGIAN";
+            display-name = "NORWEGIAN";
             bindings = <
 &trans       &trans       &trans       &trans       &trans       &trans                            &trans       &trans       &trans       &trans       &trans       &trans
 &trans       &trans       &trans       &trans       &trans       &trans                            &trans       &trans       &trans       &trans       &trans       &trans
@@ -402,12 +384,12 @@
         };
 
         layer_5 {
-            label = "ADJUST";
+            display-name = "ADJUST";
             bindings = <
 &bt BT_CLR   &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4                      &trans       &trans       &trans       &trans       &trans       &trans
-&studio_unlock EP_TOG &rgb_ug RGB_HUD &rgb_ug RGB_HUI &rgb_ug RGB_SAD &rgb_ug RGB_SAI &rgb_ug RGB_EFF     &trans       &trans       &trans       &trans       &trans       &trans
+&studio_unlock  &rgb_ug RGB_HUD &rgb_ug RGB_HUI &rgb_ug RGB_SAD &rgb_ug RGB_SAI &rgb_ug RGB_EFF     &trans       &trans       &trans       &trans       &trans       &trans
 &trans       &trans       &rgb_ug RGB_BRI &trans       &trans       &trans                            &trans       &trans       &trans       &trans       &trans       &trans
-&ext_power       &trans       &trans       &trans       &trans       &trans       &rgb_ug RGB_TOG &trans &trans     &trans       &trans       &trans       &trans       &trans
+&ext_power EP_TOG      &trans       &trans       &trans       &trans       &trans       &rgb_ug RGB_TOG &trans &trans     &trans       &trans       &trans       &trans       &trans
                           &trans       &trans       &trans       &trans       &trans                            &trans       &trans       &trans       &trans
 &kp C_PLAY_PAUSE &kp RIGHT_ARROW &kp UP_ARROW &kp LEFT_ARROW &kp DOWN_ARROW
             >;
