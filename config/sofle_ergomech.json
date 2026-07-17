@@ -1,10 +1,9 @@
 {
-  "id": "sofle_ergomech_beginner",
-  "name": "sofle_ergomech_beginner",
-  "keyboard_name": "Sofle Ergomech - Beginner-Friendly & Programmer-Optimized",
-  "url": "https://github.com/sofle-zmk/sofle-zmk",
-  "maintainer": "sofle-community",
-  "description": "Keymap optimized for programming (C/C++, Python, Rust), gaming (GuildWars2), and Norwegian/English typing",
+  "id": "sofle_ergomech",
+  "name": "sofle_ergomech",
+  "keyboard_name": "",
+  "url": "",
+  "maintainer": "qmk",
   "layouts": {
     "LAYOUT": {
       "layout": [
@@ -60,6 +59,7 @@
         { "row": 3, "col": 10, "x":    13, "y":   3.5 },
         { "row": 3, "col": 11, "x":    14, "y":   3.5 },
 
+        { "row": 4, "col":  0, "x":   6.3, "y":  3.55 },
         { "row": 4, "col":  1, "x":     2, "y":  4.35 },
         { "row": 4, "col":  2, "x":     3, "y":   4.2 },
         { "row": 4, "col":  3, "x":     4, "y":  4.35 },
@@ -69,113 +69,18 @@
         { "row": 4, "col":  7, "x":  8.75, "y":   4.5, "r": -15, "rx": 9.85 },
         { "row": 4, "col":  8, "x":    10, "y":  4.35 },
         { "row": 4, "col":  9, "x":    11, "y":   4.2 },
-        { "row": 4, "col": 10, "x":    12, "y":  4.35 }
+        { "row": 4, "col": 10, "x":    12, "y":  4.35 },
+
+        { "row": 5, "col":  6, "x": 11.25, "y":   6.5 },
+        { "row": 5, "col":  7, "x": 12.25, "y":   6.5 },
+        { "row": 5, "col":  8, "x": 11.25, "y":   5.5 },
+        { "row": 5, "col":  9, "x": 10.25, "y":   6.5 },
+        { "row": 5, "col": 10, "x": 11.25, "y":   7.5 }
       ]
-    }
-  },
-  "layers": [
-    {
-      "label": "Layer 0: Base QWERTY",
-      "keys": [
-        "Esc", "1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "-",
-        "Tab", "Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P", "=",
-        "Ctrl", "A⇧", "S⌃", "D⌥", "F⌘", "G", "H", "J⌘", "K⌥", "L⌃", ";⇧", "'",
-        "Shift", "Z", "X", "C", "V", "B", "N", "M", ",", ".", "/", "Shift",
-        "Alt", "Adj", "Sym", "Nav", "Enter", "Tab",
-        "Space", "Bspc", "Game", "Ctrl", "Alt"
-      ]
-    },
-    {
-      "label": "Layer 1: Symbols & Numbers",
-      "keys": [
-        "F1", "F2", "F3", "F4", "F5", "F6", "F7", "F8", "F9", "F10", "F11", "F12",
-        "—", "7", "8", "9", "/", "*", "[", "]", "{", "}", "\\", "|",
-        "—", "4", "5", "6", "-", "+", "<", ">", "=", "`", "^", "&",
-        "—", "1", "2", "3", ".", ",", "_", "%", "!", "?", "~", "$",
-        "—", "—", "—", "Sym", "Bspc", "()", "[]", "{}", "—",
-        "—", "—", "—", "()", "[]", "{}", "—", "—", "—"
-      ]
-    },
-    {
-      "label": "Layer 2: Navigation & IDE",
-      "keys": [
-        "Open", "F1", "F2", "F3", "F4", "F5", "Save", "F7", "F8", "F9", "F10", "F12",
-        "Find", "C-H", "PgUp", "↑", "PgDn", "G-Def", "Home", "↑", "End", "Vol↑", "Vol↓", "Mute",
-        "—", "←", "↓", "→", "C-Tab", "C-S-Tab", "Home", "↓", "End", "(", ")", "|",
-        "C-F", "Format", "C-S-X", "—", "—", "—", "Play", "Prev", "Next", "—", "—", "—",
-        "—", "—", "—", "—", "—", "—",
-        "—", "—", "—", "—", "—", "—", "—", "—", "—"
-      ]
-    },
-    {
-      "label": "Layer 3: Gaming",
-      "keys": [
-        "Esc", "1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "-",
-        "Tab", "Q", "W", "E", "R", "T", "[", "]", "{", "}", "↑", "\\",
-        "Ctrl", "A", "S", "D", "F", "G", "←", "↓", "→", ";", "'", "Enter",
-        "Shift", "Z", "X", "C", "V", "B", "M", ",", ".", "/", "Space", "Shift",
-        "Alt", "—", "Space", "PTT", "—", "—",
-        "Space", "Bspc", "Enter", "—", "Ctrl", "Alt"
-      ]
-    },
-    {
-      "label": "Layer 4: Norwegian",
-      "keys": [
-        "—", "—", "—", "—", "—", "—", "—", "—", "—", "—", "—", "—",
-        "—", "—", "—", "—", "—", "—", "—", "—", "—", "—", "—", "—",
-        "—", "—", "—", "—", "—", "—", "—", "—", "—", "—", "—", "—",
-        "—", "—", "—", "—", "—", "—", "—", "—", "—", "—", "—", "—",
-        "—", "—", "ø", "ø", "—", "—",
-        "ø", "ø", "Æ", "—", "—", "—"
-      ]
-    },
-    {
-      "label": "Layer 5: Adjust/RGB/BT",
-      "keys": [
-        "BT_CLR", "BT0", "BT1", "BT2", "BT3", "BT4", "—", "—", "—", "—", "—", "—",
-        "RGB_ON", "RGB_OFF", "RGB_TOG", "RGB_NEXT", "RGB_PREV", "—", "RGB_BRI↑", "RGB_BRI↓", "RGB_SAT↑", "RGB_SAT↓", "RGB_HUE↑", "RGB_HUE↓",
-        "EXT_ON", "EXT_OFF", "EXT_TOG", "—", "—", "—", "—", "—", "—", "—", "—", "—",
-        "Reset", "Boot", "—", "—", "—", "—", "—", "—", "—", "—", "—", "—",
-        "—", "—", "—", "—", "—", "—",
-        "—", "—", "—", "—", "—", "—", "—", "—", "—"
-      ]
-    }
-  ],
-  "notes": {
-    "layer_0": "Base QWERTY with home-row mods. A=Shift, S=Ctrl, D=Alt, F=GUI on left; J=GUI, K=Alt, L=Ctrl, ';=Shift on right.",
-    "layer_1": "Numbers (numpad layout) and programming symbols. Includes auto-bracket macros.",
-    "layer_2": "IDE shortcuts (Ctrl+K Ctrl+O for open, Ctrl+S for save) and one-handed navigation (HJKL-style).",
-    "layer_3": "Gaming optimized: WASD accessible, quick ability hotbar (1-6), push-to-talk support.",
-    "layer_4": "Norwegian characters - access ø/Ø, æ/Æ, å/Å. Use Alt-codes or OS composition.",
-    "layer_5": "Bluetooth profile switching, RGB underglow control, power management, reset/bootloader.",
-    "combos": [
-      "12 = ~ (tilde)",
-      "23 = @ (at)",
-      "34 = # (hash)",
-      "45 = $ (dollar)",
-      "2021 = Caps Lock"
-    ],
-    "macros": [
-      "Layer 2: Open file (Ctrl+K Ctrl+O), Save (Ctrl+S), Find in files (Ctrl+Shift+F)",
-      "Layer 2: Go to definition (Ctrl+Shift+I), Format document (Ctrl+Alt+F)",
-      "Layer 1: Auto-parentheses, brackets, braces"
-    ],
-    "encoder": {
-      "rotate_normal": "Volume up/down",
-      "rotate_with_alt": "Layer switching (cycle through layers)",
-      "rotate_with_ctrl": "Tab switching (Ctrl+Tab / Ctrl+Shift+Tab)",
-      "press": "Mute or custom macro"
-    },
-    "five_way_switch": {
-      "press": "Toggle Gaming layer",
-      "up": "Navigation/IDE layer",
-      "down": "Norwegian layer",
-      "left": "Reserved for future use",
-      "right": "Reserved for future use"
     }
   },
   "sensors": [
-    {
+        {
       "ref": "left_encoder",
       "name": "encoder_left",
       "identifier": "encoder_left",
