@@ -14,11 +14,10 @@
 / {
     behaviors {
         mousescroll: mousescroll {
-            compatible = "zmk,behavior-sensor-rotate";
-            #sensor-binding-cells = <0>;
-            bindings = <&msc SCRL_UP>, <&msc SCRL_DOWN>;
-			tap-ms = <20>;
-        };
+    compatible = "zmk,behavior-sensor-rotate";
+    #sensor-binding-cells = <0>;
+    bindings = <&kp PG_DN &kp PG_UP>;
+};
         
         hm_l: homerow_mods_left {
             compatible = "zmk,behavior-hold-tap";
